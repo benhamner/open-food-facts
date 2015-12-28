@@ -10,10 +10,10 @@ conversion = {
 sql = """.separator ","
 
 CREATE TABLE FoodFacts (
-%s)
+%s);
 
 .import "working/noHeader/FoodFacts.csv" FoodFacts
-""" % ",\n".join(["    %s %s" % (key, conversion[str(data.dtypes[key])]) for key in data.dtypes.keys()])
+""" % ",\n".join(["    %s %s" % (key.replace("-", "_"), conversion[str(data.dtypes[key])]) for key in data.dtypes.keys()])
 
 print(type(data.dtypes))
 print(data.dtypes.keys())
