@@ -30,7 +30,9 @@ output/hashes.txt: output/database.sqlite
 hashes: output/hashes.txt
 
 release: output/database.sqlite output/hashes.txt
-	zip -r -X output/open-food-facts-release-`date -u +'%Y-%m-%d-%H-%M-%S'` output/*
+	cp -r output world-food-facts
+	zip -r -X output/world-food-facts-release-`date -u +'%Y-%m-%d-%H-%M-%S'` world-food-facts/*
+	rm -rf world-food-facts
 
 all: csv db hashes release
 

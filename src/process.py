@@ -4,7 +4,8 @@ data = pd.read_csv("input/FoodFacts.tsv", sep="\t")
 
 conversion = {
     "object": "TEXT",
-    "float64": "NUMERIC"
+    "float64": "NUMERIC",
+    "int64": "INTEGER"
 }
 
 sql = """.separator ","
