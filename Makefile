@@ -4,7 +4,7 @@ input/FoodFacts.tsv:
 	curl http://world.openfoodfacts.org/data/en.openfoodfacts.org.products.csv -o input/FoodFacts.tsv
 input: input/FoodFacts.tsv
 
-output/FoodFacts.csv:
+output/FoodFacts.csv: input/FoodFacts.tsv
 	mkdir -p working
 	mkdir -p output
 	python src/process.py
